@@ -144,7 +144,9 @@ function displayAddProjectWindow() {
         const projectLi = document.createElement("li");
         projectLi.textContent = project.title;
         projectLi.addEventListener("click", () => {
-            console.log("hello");
+            if(document.querySelector(".add-task-button")) {
+                document.body.removeChild(document.querySelector(".add-task-button"))
+            }
             project.displayProject();
         })
         projectList.appendChild(projectLi);
